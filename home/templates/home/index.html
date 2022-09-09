@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Cosmos Page</h2>
+    <h3><br>
+        <form action="" method="get">
+            {{ form }}
+            <input type="submit" value="Search">
+        </form>
+        <hr>
+        <div class="card">
+            {% for post in posts %}
+                <div class="card-body">
+                    <a href="{{ post.get_absolute_url }}">{{ post.title|truncatewords:5 }}</a>
+                </div>
+            {% endfor %}
+
+        </div>
+    </h3>
+{% endblock %}
